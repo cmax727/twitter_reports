@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var config = require('../config')
+  , mongoose = require('mongoose')
+  , messages = require('../lib/messages')
+
+mongoose.connect(config.mongodb)
+
+messages.send()
+
+// Kill this process after X s
+setTimeout(function(){
+    console.log('Timed out')
+    process.exit(1)
+}, 1000 * 30)

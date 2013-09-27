@@ -1,0 +1,167 @@
+@black: #171b18;
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #eee;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#main {
+    min-height: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.navbar-inner {
+    padding: 5px 20px;
+    background: @black;
+    .brand {
+        .hide-text();
+        width: 180px;
+        height: 28px;
+        margin: 6px 22px 6px 0;
+        padding: 0;
+        background: url(../img/sr-mini.png) no-repeat;
+    }
+    .nav > li > a {
+        color: #f3f3f3;
+        font-weight: 300;
+        &:hover{ color: #f5f5f5; }
+    }
+    p, p a { color: #fff; }
+}
+
+.sidebar {
+    padding: 0 15px 15px;
+    width: 190px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #d3d3d3;
+    box-shadow: 1px 0 0 #f7f7f7;
+    background: #e7e7e7;
+    .header {
+        font-size: 14px;
+        line-height: 20px;
+        #gradient > .vertical(#eee, #ccc);
+        width: 190px;
+        margin:0 0 0 -15px;
+        padding: 6px 15px;
+        border-bottom: 1px solid #aaa;
+        border-top: 1px solid #fafafa;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.9;
+        }
+        .arrow.open,
+        .arrow.closed {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            vertical-align: top;
+            border-left: 4px solid #444;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+        }
+        .arrow.open {
+            border-top: 4px solid #444;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            margin-top: 0;
+        }
+    }
+    .accordion + .section {
+        max-height: 0;
+        overflow: hidden;
+        .transition(max-height .2s);
+        &.open {
+            max-height: 800px;
+        }
+    }
+    .section {
+        // padding: 10px 0 20px;
+        & > :first-child {
+            margin-top: 10px;
+        }
+        & > :last-child {
+            margin-bottom: 20px
+        }
+    }
+    .alert {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        input { vertical-align: top; }
+        label { display: inline; }
+    }
+}
+
+#module-list {
+    padding-top: 10px;
+    a:hover {
+        cursor: move;
+        outline: 1px solid #ddd;
+    }
+}
+
+.actions-panel {
+    position: fixed;
+    z-index: 1020;
+    top: 50px;
+    right: 40px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    min-width: 100px;
+    .dashboard-url {
+        width: 130px;
+        color: #666;
+        margin:0 10px 0 2px;
+        cursor: default;
+    }
+}
+
+.content {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-width: 400px;
+    max-width: 980px;
+    min-height: 100%;
+    margin-left: 240px;
+}
+
+#footer {
+    clear: both;
+    width: 100%;
+    height: 30px;
+    margin-top: -32px;
+    background: #eee;
+    box-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+    border-top: 1px solid #fff;
+    position: relative;
+    z-index: 10;
+    .inner {
+        padding: 4px 30px;
+        line-height: 22px;
+        text-align: right;
+    }
+    p {
+        font-size: 12px;
+        color: #999;
+        margin: 0;
+    }
+}

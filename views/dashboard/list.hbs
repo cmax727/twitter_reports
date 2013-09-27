@@ -1,0 +1,52 @@
+<div class="container page-list">
+
+    <div class="section">
+        <h2>Your dashboards</h2>
+        <ul class="dashboard-list">
+        {{#each dashboards}}
+            <li class="dashboard-item">
+                <strong class="title"><a href="/dashboard/edit/{{_id}}">{{title}}</a></strong>
+                <div class="btn-group">
+                    <a href="/dashboard/edit/{{_id}}" class="btn">Edit</a>
+                    <a href="/dashboard/view/{{_id}}" target="_blank" class="btn btn-info">View</a>
+                </div>
+                <p class="last-modified">edited {{date-from lastModified}}</p>
+                <!--
+                {{#if isDraft}}
+                <span class="label label-important">Draft</span>
+                {{else}}
+                <span class="label label-info">Published</span>
+                {{/if}}
+                -->
+             </li>
+        {{^}}
+            <li><a href="/dashboard/new" class="btn btn-info">Create new dashboard</a></li>
+        {{/each}}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Data sources</h2>
+
+        <div class="subsection sources-facebook">
+            <h4>Facebook pages</h3>
+            <ul class="sources-list">
+            {{#each facebookPages}}
+                <li class="item"><a href="/api/facebook/{{_id}}">{{name}}</a></li>
+            {{/each}}
+            </ul>
+            <a href="/facebook/update" rel="absolute" class="btn">Update pages</a>
+        </div>
+
+        <div class="subsection sources-twitter">
+            <h4>Twitter profiles</h3>
+            <ul class="sources-list">
+            {{#each twitterProfiles}}
+                <li><a href="/api/twitter/{{_id}}">{{screen_name}}</a></li>
+            {{/each}}
+            </ul>
+            <a href="/auth/twitter" target="_blank" class="btn">Connect with Twitter</a></li>
+        </div>
+    </div>
+
+</div>

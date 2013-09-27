@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{dashboard.title}} - Switch Reports</title>
+    {{css 'dashboard'}}
+</head>
+<body>
+    
+    <div id="main" class="dashboard-viewer">
+        <div class="container">
+            <div class="span12">
+                <h1 class="dashboard-title">{{dashboard.title}}</h1>
+                {{#if dashboard.description}}
+                <p class="lead">{{dashboard.description}}
+                {{/if}}
+            </div>
+            <div class="grid-rows">
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="inner">
+            <p>&copy; Switch Reports 2012</p>
+        </div>
+    </footer>
+
+    {{js 'dashboard-viewer'}}
+
+    <script src="/templates.js"></script>
+    <script>SR.view({{json dashboard}})</script>
+</body>
+</html>

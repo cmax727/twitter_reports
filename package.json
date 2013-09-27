@@ -1,0 +1,52 @@
+{
+  "engines": {
+    "node": "~0.8",
+    "npm": "~1.1"
+  },
+  "name": "switch-reports-dev",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Facebook metrics reporting app",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "less": "*",
+    "mongoose": "*",
+    "mongoose-types": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "passport-twitter": "*",
+    "fb": "*",
+    "bcrypt": "*",
+    "connect-assets": "*",
+    "connect-mongo": "*",
+    "twitter-bootstrap": "*",
+    "underscore": "*",
+    "winston": "*",
+    "handlebars": "*",
+    "require-tree": "*",
+    "glob": "*",
+    "tsv": "*",
+    "moment": "*",
+    "nodemailer": "*",
+    "hbs": "*",
+    "validator": "*",
+    "nodefly": "stable",
+    "pkgcloud": "*",
+    "stripe": "~1.3.0",
+    "twit": "~1.1.6"
+  },
+  "devDependencies": {
+    "supervisor": "*"
+  },
+  "dontNeed": {
+    "socket.io": "*",
+    "socket.io-client": "*",
+    "passport.socketio": "*",
+    "connect-redis": "*",
+    "async": "*"
+  }
+}

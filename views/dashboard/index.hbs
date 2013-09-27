@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>Switch Reports</title>
+    {{css 'dashboard'}}
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="/dashboard/">Switch Reports</a>
+                <div class="nav-collapse collapse">
+                    <div class="navbar-text pull-right">
+                        <a href="/dashboard" class="navbar-link navbar-user"><i class="icon-user"></i> {{user.name}}</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li><a tabindex="-1" href="/auth/signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                    <ul class="nav" id="main-nav">
+                        <li class="new"><a href="/dashboard/new">Create Dashboard</a></li>
+                        <li class="all"><a href="/dashboard/all">All Dashboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        
+    </div>
+
+    <footer id="footer">
+        <div class="inner">
+            <p>&copy; Switch Reports 2012</p>
+        </div>
+    </footer>
+
+    {{js 'app'}}
+
+    <script src="/templates.js"></script>
+    <script>SR.init()</script>
+</body>
+</html>
